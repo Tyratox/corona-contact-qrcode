@@ -12,7 +12,7 @@
   "Address.city": "Luogo di residenza",
   "Address.cityPlaceholder": "Bellinzona",
   "Address.phoneNumber": "Telefono",
-  "Address.phoneNumberPlaceholder": "091 555 6X 7X",
+  "Address.phoneNumberPlaceholder": "091 000 00 00",
   "Address.isRequired": "E' richiesto",
   "Address.save": "Save",
   "Address.deleteData": "Cancellare i dati"
