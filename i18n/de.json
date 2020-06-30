@@ -1,0 +1,19 @@
+{
+  "App.navigation.qrcode": "QRCode",
+  "App.navigation.address": "Adresse",
+  "Address.firstName": "Vorname",
+  "Address.firstNamePlaceholder": "Max",
+  "Address.lastName": "Nachname",
+  "Address.lastNamePlaceholder": "Mustermann",
+  "Address.street": "Strasse",
+  "Address.streetPlaceholder": "Musterstrasse 42",
+  "Address.postalCode": "Postleitzahl",
+  "Address.postalCodePlaceholder": "5000",
+  "Address.city": "Stadt/Ort",
+  "Address.cityPlaceholder": "Aarau",
+  "Address.phoneNumber": "Telefonnummer",
+  "Address.phoneNumberPlaceholder": "062 000 00 00",
+  "Address.isRequired": "Wird benötigt",
+  "Address.save": "Speichern",
+  "Address.deleteData": "Daten löschen"
+}

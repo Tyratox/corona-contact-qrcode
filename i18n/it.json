@@ -1,0 +1,19 @@
+{
+  "App.navigation.qrcode": "QRCode",
+  "App.navigation.address": "Address",
+  "Address.firstName": "First name",
+  "Address.firstNamePlaceholder": "John",
+  "Address.lastName": "Last name",
+  "Address.lastNamePlaceholder": "Doe",
+  "Address.street": "Street",
+  "Address.streetPlaceholder": "123 Main",
+  "Address.postalCode": "Postal code",
+  "Address.postalCodePlaceholder": "10001",
+  "Address.city": "City",
+  "Address.cityPlaceholder": "St Anytown",
+  "Address.phoneNumber": "Phone number",
+  "Address.phoneNumberPlaceholder": "(555) 555-1234",
+  "Address.isRequired": "Is required",
+  "Address.save": "Save",
+  "Address.deleteData": "Delete data"
+}

@@ -1,10 +1,22 @@
-import React from "react";
+import React, { FunctionComponent, ReactNode } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { AntDesign } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import QRCode from "./screens/QRCode";
 import Address from "./screens/Address";
+import * as Localization from "expo-localization";
+import { IntlProvider, defineMessages, useIntl } from "react-intl";
+
+import en from "./i18n/en.json";
+import de from "./i18n/de.json";
+
+const i18nMessages: {
+  [locale: string]: any;
+} = {
+  en,
+  de,
+};
 
 const Tab = createBottomTabNavigator();
 
@@ -13,7 +25,38 @@ export type RootStackParamList = {
   Address: undefined;
 };
 
-const App = () => {
+const messages = defineMessages({
+  qrcode: {
+    id: "App.navigation.qrcode",
+    defaultMessage: "QRCode",
+  },
+  address: {
+    id: "App.navigation.address",
+    defaultMessage: "Address",
+  },
+});
+
+const AppWrapper: FunctionComponent<{ children: ReactNode }> = ({
+  children,
+}) => {
+  let locale = Localization.locale;
+  if (locale.includes("-") && !(locale in i18nMessages)) {
+    locale = locale.split("-")[0];
+  }
+
+  return (
+    <IntlProvider
+      locale={locale}
+      messages={locale in i18nMessages ? i18nMessages[locale] : i18nMessages.en}
+    >
+      {children}
+    </IntlProvider>
+  );
+};
+
+const InnerApp = () => {
+  const intl = useIntl();
+
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -37,16 +80,22 @@ const App = () => {
         <Tab.Screen
           name="QRCode"
           component={QRCode}
-          options={{ title: "QRCode" }}
+          options={{ title: intl.formatMessage(messages.qrcode) }}
         />
         <Tab.Screen
           name="Address"
           component={Address}
-          options={{ title: "Adresse" }}
+          options={{ title: intl.formatMessage(messages.address) }}
         />
       </Tab.Navigator>
     </NavigationContainer>
   );
 };
+
+const App = () => (
+  <AppWrapper>
+    <InnerApp />
+  </AppWrapper>
+);
 
 export default App;

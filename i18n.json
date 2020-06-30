@@ -1,0 +1,70 @@
+[
+  {
+    "id": "App.navigation.qrcode",
+    "defaultMessage": "QRCode"
+  },
+  {
+    "id": "App.navigation.address",
+    "defaultMessage": "Address"
+  },
+  {
+    "id": "Address.firstName",
+    "defaultMessage": "First name"
+  },
+  {
+    "id": "Address.firstNamePlaceholder",
+    "defaultMessage": "John"
+  },
+  {
+    "id": "Address.lastName",
+    "defaultMessage": "Last name"
+  },
+  {
+    "id": "Address.lastNamePlaceholder",
+    "defaultMessage": "Doe"
+  },
+  {
+    "id": "Address.street",
+    "defaultMessage": "Street"
+  },
+  {
+    "id": "Address.streetPlaceholder",
+    "defaultMessage": "123 Main"
+  },
+  {
+    "id": "Address.postalCode",
+    "defaultMessage": "Postal code"
+  },
+  {
+    "id": "Address.postalCodePlaceholder",
+    "defaultMessage": "10001"
+  },
+  {
+    "id": "Address.city",
+    "defaultMessage": "City"
+  },
+  {
+    "id": "Address.cityPlaceholder",
+    "defaultMessage": "St Anytown"
+  },
+  {
+    "id": "Address.phoneNumber",
+    "defaultMessage": "Phone number"
+  },
+  {
+    "id": "Address.phoneNumberPlaceholder",
+    "defaultMessage": "(555) 555-1234"
+  },
+  {
+    "id": "Address.isRequired",
+    "defaultMessage": "Is required"
+  },
+  {
+    "id": "Address.save",
+    "defaultMessage": "Save"
+  },
+  {
+    "id": "Address.deleteData",
+    "defaultMessage": "Delete data"
+  }
+]
