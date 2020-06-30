@@ -6,14 +6,14 @@
   "Address.lastName": "Cognome",
   "Address.lastNamePlaceholder": "Pallino",
   "Address.street": "Via",
-  "Address.streetPlaceholder": "123 Main",
-  "Address.postalCode": "Postal code",
+  "Address.streetPlaceholder": "Via Stazione 1000",
+  "Address.postalCode": "Codice postale",
   "Address.postalCodePlaceholder": "6500",
   "Address.city": "Luogo di residenza",
   "Address.cityPlaceholder": "Bellinzona",
   "Address.phoneNumber": "Telefono",
-  "Address.phoneNumberPlaceholder": "091 ",
-  "Address.isRequired": "Is required",
+  "Address.phoneNumberPlaceholder": "091 555 6X 7X",
+  "Address.isRequired": "E' richiesto",
   "Address.save": "Save",
-  "Address.deleteData": "Delete data"
+  "Address.deleteData": "Cancellare i dati"
 }
