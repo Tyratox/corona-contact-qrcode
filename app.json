@@ -17,13 +17,13 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "bundleIdentifier": "ch.feuerschutz.ciao.qr",
-      "buildNumber": "1.0.0",
+      "buildNumber": "1.0.1",
       "supportsTablet": true,
       "associatedDomains": ["applinks:ciao.feuerschutz.ch"]
     },
     "android": {
       "package": "ch.feuerschutz.ciao.qr",
-      "versionCode": 1,
+      "versionCode": 2,
       "intentFilters": [
         {
           "action": "VIEW",
