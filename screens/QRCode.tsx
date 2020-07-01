@@ -4,7 +4,13 @@ import React, {
   useEffect,
   useCallback,
 } from "react";
-import { Alert, Text, Button, AsyncStorage } from "react-native";
+import {
+  Alert,
+  Text,
+  Button,
+  AsyncStorage,
+  useWindowDimensions,
+} from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import styled from "styled-components/native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -24,6 +30,7 @@ const QRCode: FunctionComponent<{
   navigation: QRCodeNavigationProp;
 }> = ({ navigation }) => {
   const [address, setAddress] = useState<undefined | null | string>(undefined);
+  const window = useWindowDimensions();
 
   useEffect(() => {
     const unsubscribe = navigation.addListener("focus", () => {
@@ -57,7 +64,7 @@ const QRCode: FunctionComponent<{
         </>
       ) : (
         <>
-          <QR value={address} size={250} />
+          <QR value={address} size={(3 / 4) * window.width} color={"#000"} />
         </>
       )}
     </ScreenView>

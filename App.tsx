@@ -73,7 +73,7 @@ const InnerApp = () => {
           },
         })}
         tabBarOptions={{
-          activeTintColor: "tomato",
+          activeTintColor: "#F1C40F",
           inactiveTintColor: "gray",
         }}
       >
