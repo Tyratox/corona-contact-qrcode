@@ -6,17 +6,28 @@ import { FontAwesome5 } from "@expo/vector-icons";
 import QRCode from "./screens/QRCode";
 import Address from "./screens/Address";
 import * as Localization from "expo-localization";
-import { IntlProvider, defineMessages, useIntl } from "react-intl";
+import i18n from "i18n-js";
 
 import en from "./i18n/en.json";
 import de from "./i18n/de.json";
+import fr from "./i18n/fr.json";
+import it from "./i18n/it.json";
 
-const i18nMessages: {
-  [locale: string]: any;
-} = {
+i18n.translations = {
   en,
   de,
+  fr,
+  it,
 };
+
+let locale = Localization.locale;
+if (locale.includes("-") && !(locale in i18n.translations)) {
+  locale = locale.split("-")[0];
+}
+
+i18n.locale = locale;
+i18n.defaultLocale = "en";
+i18n.fallbacks = true;
 
 const Tab = createBottomTabNavigator();
 
@@ -25,38 +36,7 @@ export type RootStackParamList = {
   Address: undefined;
 };
 
-const messages = defineMessages({
-  qrcode: {
-    id: "App.navigation.qrcode",
-    defaultMessage: "QRCode",
-  },
-  address: {
-    id: "App.navigation.address",
-    defaultMessage: "Address",
-  },
-});
-
-const AppWrapper: FunctionComponent<{ children: ReactNode }> = ({
-  children,
-}) => {
-  let locale = Localization.locale;
-  if (locale.includes("-") && !(locale in i18nMessages)) {
-    locale = locale.split("-")[0];
-  }
-
-  return (
-    <IntlProvider
-      locale={locale}
-      messages={locale in i18nMessages ? i18nMessages[locale] : i18nMessages.en}
-    >
-      {children}
-    </IntlProvider>
-  );
-};
-
-const InnerApp = () => {
-  const intl = useIntl();
-
+const App = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -73,29 +53,23 @@ const InnerApp = () => {
           },
         })}
         tabBarOptions={{
-          activeTintColor: "#F1C40F",
+          activeTintColor: "#000",
           inactiveTintColor: "gray",
         }}
       >
         <Tab.Screen
           name="QRCode"
           component={QRCode}
-          options={{ title: intl.formatMessage(messages.qrcode) }}
+          options={{ title: i18n.t("qrcode") }}
         />
         <Tab.Screen
           name="Address"
           component={Address}
-          options={{ title: intl.formatMessage(messages.address) }}
+          options={{ title: i18n.t("address") }}
         />
       </Tab.Navigator>
     </NavigationContainer>
   );
 };
-
-const App = () => (
-  <AppWrapper>
-    <InnerApp />
-  </AppWrapper>
-);
 
 export default App;

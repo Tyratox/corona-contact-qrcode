@@ -10,12 +10,17 @@ import styled from "styled-components/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import QR from "react-native-qrcode-svg";
 import { RootStackParamList } from "../App";
+import i18n from "i18n-js";
 
 const ScreenView = styled(SafeAreaView)`
   flex: 1;
   background-color: #fff;
   align-items: center;
   justify-content: center;
+`;
+
+const PaddedText = styled.Text`
+  padding-bottom: 16px;
 `;
 
 type QRCodeNavigationProp = StackNavigationProp<RootStackParamList, "QRCode">;
@@ -50,9 +55,9 @@ const QRCode: FunctionComponent<{
         <></>
       ) : address === null ? (
         <>
-          <Text>Es wurde noch keine Adresse hinterlegt.</Text>
+          <PaddedText>{i18n.t("noAddress")}</PaddedText>
           <Button
-            title="Adresse hinterlegen"
+            title={i18n.t("enterAddress")}
             onPress={() => navigation.navigate("Address")}
           />
         </>
