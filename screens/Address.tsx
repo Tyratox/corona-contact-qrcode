@@ -13,7 +13,7 @@ import {
   Alert,
   Platform,
   ScrollView,
-  useWindowDimensions,
+  Dimensions,
 } from "react-native";
 import styled from "styled-components/native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -128,7 +128,8 @@ const Address: FunctionComponent<{
   navigation: AddressNavigationProp;
 }> = ({ navigation }) => {
   const intl = useIntl();
-  const window = useWindowDimensions();
+  const windowWidth = Dimensions.get("window").width;
+
   const { control, handleSubmit, setValue, reset, errors } = useForm({
     mode: "onSubmit",
     defaultValues: {
@@ -187,8 +188,8 @@ const Address: FunctionComponent<{
           <Form>
             <Logo>
               <Svg
-                height={(283 / 728) * (1 / 4) * window.width}
-                width={(1 / 4) * window.width}
+                height={(283 / 728) * (1 / 4) * windowWidth}
+                width={(1 / 4) * windowWidth}
                 viewBox="0 0 728 283"
               >
                 <Path d="M169 204c-1 6-3 10-6 13-6 14-16 27-29 41-14 15-26 22-34 22h-4l-32-12c-21-9-37-25-49-50-10-22-15-47-15-77 0-35 7-67 21-94C35 18 54 3 75 2c9-1 21 4 38 13 16 9 27 18 32 27s9 28 11 59l-3 20c-3 8-6 11-10 11-8-1-17-4-29-8-13-4-21-8-22-11l-1-3 3-7 3-7 1-25c0-12-1-20-3-24a89 89 0 00-30 48c-6 19-8 40-8 64 0 18 1 35 4 49 4 15 8 23 12 26 2 2 8-3 18-13s16-18 19-24l3-10c1-4 3-7 5-8 4-1 13 2 29 10 15 7 22 12 22 15zM277 18l-1 6-2 5c-2 4-3 11-4 20v199l2 7 2 5c0 14-3 22-8 23l-23-4c-14-4-22-7-24-9-5-4-7-7-7-11l1-3 2-5V21l-1-4-2-4c1-5 5-8 12-10h15l24 4c9 2 14 6 14 11zM516 255a856 856 0 00-4 23l-6 1c-7 0-16-2-26-6-12-3-19-8-24-12l-5-20c-2-14-5-26-8-36a241 241 0 00-67 21 900 900 0 01-21 50l-3 1c-5 0-13-3-26-9-12-5-18-9-19-10-1-3 1-11 6-23l12-32c-4-4-6-9-6-13v-4c0-2 7-7 20-14l42-143V15c0-6 0-10 2-11l8-2c10 0 24 3 43 8s30 10 34 14a1000 1000 0 0048 231zm-85-99a644 644 0 01-10-72 571 571 0 00-25 81l35-9zM657 278c-5 0-10 0-16-2a600 600 0 01-47-14c-17-8-30-23-39-45-8-20-12-44-12-72 0-22 4-49 12-79 11-41 24-61 41-61l7 1 6 1c16-4 26-7 31-7l6 1c26 3 47 19 62 48 13 27 20 58 20 95 0 35-6 64-18 89-13 27-31 42-53 45zm-6-238c-5-2-10 5-14 19-5 14-10 21-14 21l-5-2-5-2c-8 16-11 40-11 70 0 23 2 43 7 60 6 19 14 30 24 32 11 2 21-10 28-36a313 313 0 004-136c-3-16-8-25-14-26z" />
