@@ -1,13 +1,9 @@
 {
   "expo": {
     "name": "Ciao QR",
-    "slug": "corona-contact-qrcode",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.0",
+    "slug": "ciao-qr",
+    "platforms": ["ios", "android", "web"],
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -18,11 +14,31 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "ch.feuerschutz.ciao.qr",
+      "buildNumber": "1.0.0",
+      "supportsTablet": true,
+      "associatedDomains": ["applinks:ciao.feuerschutz.ch"]
+    },
+    "android": {
+      "package": "ch.feuerschutz.ciao.qr",
+      "versionCode": 1,
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "ciao.feuerschutz.ch",
+              "pathPrefix": "/"
+            }
+          ],
+          "category": ["BROWSABLE", "DEFAULT"]
+        }
+      ],
+      "permissions": []
     },
     "description": ""
   }
