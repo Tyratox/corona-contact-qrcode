@@ -50,6 +50,8 @@ const Label = styled.Text`
 const StyledTextInput = styled.TextInput`
   font-size: 16px;
   padding: 8px 0;
+  border-bottom-width: 1px;
+  margin-bottom: 8px;
 `;
 
 const Logo = styled.View`
@@ -81,9 +83,11 @@ const Address: FunctionComponent<{
       phoneNumber: "",
     },
   }); // initialise the hook
+
   const onSubmit = async (data: { [key: string]: string }) => {
     try {
       await AsyncStorage.setItem("address", JSON.stringify(data));
+      Alert.alert(i18n.t("dataSaved"));
     } catch (error) {
       // Error saving data
       throw error;
@@ -112,7 +116,7 @@ const Address: FunctionComponent<{
           }
         })
         .catch((e) => {
-          throw new Error(e);
+          throw e;
         });
     });
 

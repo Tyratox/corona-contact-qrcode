@@ -1,6 +1,7 @@
 {
   "qrcode": "QRCode",
   "address": "Adresse",
+  "dataSaved": "Données stockées",
   "firstName": "Prénom",
   "firstNamePlaceholder": "Jean",
   "lastName": "Nom",
@@ -12,7 +13,7 @@
   "city": "Lieu",
   "cityPlaceholder": "Lausanne",
   "phoneNumber": "Téléphone",
-  "phoneNumberPlaceholder": "021 000 00 00",
+  "phoneNumberPlaceholder": "079 000 00 00",
   "isRequired": "Est obligatoire",
   "save": "Save",
   "deleteData": "Effacer les données",

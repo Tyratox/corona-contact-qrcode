@@ -1,6 +1,7 @@
 {
   "qrcode": "QRCode",
   "address": "Indirizzo",
+  "dataSaved": "Dati memorizzati",
   "firstName": "Nome",
   "firstNamePlaceholder": "Pinco",
   "lastName": "Cognome",
@@ -12,7 +13,7 @@
   "city": "Luogo di residenza",
   "cityPlaceholder": "Bellinzona",
   "phoneNumber": "Telefono",
-  "phoneNumberPlaceholder": "091 000 00 00",
+  "phoneNumberPlaceholder": "079 000 00 00",
   "isRequired": "E' richiesto",
   "save": "Save",
   "deleteData": "Cancellare i dati",
