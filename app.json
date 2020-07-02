@@ -3,7 +3,7 @@
     "name": "Ciao QR",
     "slug": "ciao-qr",
     "platforms": ["ios", "android", "web"],
-    "version": "1.0.2",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -17,13 +17,13 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "bundleIdentifier": "ch.feuerschutz.ciao.qr",
-      "buildNumber": "1.0.2",
+      "buildNumber": "1.0.3",
       "supportsTablet": true,
       "associatedDomains": ["applinks:ciao.feuerschutz.ch"]
     },
     "android": {
       "package": "ch.feuerschutz.ciao.qr",
-      "versionCode": 3,
+      "versionCode": 4,
       "intentFilters": [
         {
           "action": "VIEW",
