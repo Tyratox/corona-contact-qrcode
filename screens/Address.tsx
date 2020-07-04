@@ -72,7 +72,14 @@ const Address: FunctionComponent<{
 }> = ({ navigation }) => {
   const windowWidth = Dimensions.get("window").width;
 
-  const { control, handleSubmit, setValue, reset, errors } = useForm({
+  const {
+    control,
+    handleSubmit,
+    setValue,
+    reset,
+    errors,
+    formState: { dirty, isValid },
+  } = useForm({
     mode: "onSubmit",
     defaultValues: {
       firstName: "",
@@ -88,6 +95,7 @@ const Address: FunctionComponent<{
     try {
       await AsyncStorage.setItem("address", JSON.stringify(data));
       Alert.alert(i18n.t("dataSaved"));
+      navigation.navigate("QRCode");
     } catch (error) {
       // Error saving data
       throw error;
@@ -209,13 +217,21 @@ const Address: FunctionComponent<{
                 control={control}
                 name="phoneNumber"
                 onChange={(args) => args[0].nativeEvent.text}
-                rules={{ required: true, minLength: 10 }}
+                rules={{ required: true }}
                 placeholder={i18n.t("phoneNumberPlaceholder")}
               />
               {errors.phoneNumber && <Error>{i18n.t("isRequired")}</Error>}
             </Row>
             <Row>
-              <Button title={i18n.t("save")} onPress={handleSubmit(onSubmit)} />
+              <Button
+                title={i18n.t("save")}
+                onPress={handleSubmit(onSubmit)}
+                color={
+                  !dirty || Object.keys(errors).length > 0
+                    ? "#95a5a6"
+                    : undefined
+                }
+              />
             </Row>
             <Row>
               <Button
