@@ -10,7 +10,6 @@ import {
   AsyncStorage,
   Button,
   Text,
-  Alert,
   Platform,
   ScrollView,
   Dimensions,
@@ -94,7 +93,6 @@ const Address: FunctionComponent<{
   const onSubmit = async (data: { [key: string]: string }) => {
     try {
       await AsyncStorage.setItem("address", JSON.stringify(data));
-      Alert.alert(i18n.t("dataSaved"));
       navigation.navigate("QRCode");
     } catch (error) {
       // Error saving data

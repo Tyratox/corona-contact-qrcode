@@ -1,7 +1,6 @@
 {
   "qrcode": "QRCode",
   "address": "Address",
-  "dataSaved": "Data saved",
   "firstName": "First name",
   "firstNamePlaceholder": "John",
   "lastName": "Last name",
