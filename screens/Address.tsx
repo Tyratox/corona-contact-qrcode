@@ -21,6 +21,8 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import i18n from "i18n-js";
 import Svg, { Circle, Path } from "react-native-svg";
 
+export const ADDRESS_API_VERSION = 2;
+
 const ScreenView = styled(SafeAreaView)`
   flex: 1;
   background-color: #fff;
@@ -87,12 +89,16 @@ const Address: FunctionComponent<{
       postalCode: "",
       city: "",
       phoneNumber: "",
+      email: "",
     },
   }); // initialise the hook
 
   const onSubmit = async (data: { [key: string]: string }) => {
     try {
-      await AsyncStorage.setItem("address", JSON.stringify(data));
+      await AsyncStorage.setItem(
+        "address",
+        JSON.stringify({ ...data, version: ADDRESS_API_VERSION })
+      );
       navigation.navigate("QRCode");
     } catch (error) {
       // Error saving data
@@ -219,6 +225,18 @@ const Address: FunctionComponent<{
                 placeholder={i18n.t("phoneNumberPlaceholder")}
               />
               {errors.phoneNumber && <Error>{i18n.t("isRequired")}</Error>}
+            </Row>
+            <Row>
+              <Label>{i18n.t("email")}</Label>
+              <Controller
+                as={StyledTextInput}
+                control={control}
+                name="email"
+                onChange={(args) => args[0].nativeEvent.text}
+                rules={{ required: true }}
+                placeholder={i18n.t("emailPlaceholder")}
+              />
+              {errors.email && <Error>{i18n.t("isRequired")}</Error>}
             </Row>
             <Row>
               <Button

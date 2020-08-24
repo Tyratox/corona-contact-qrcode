@@ -1,5 +1,6 @@
 {
   "qrcode": "QRCode",
+  "outdated": "The app was updated and from now on an email address is required. Please enter it.",
   "address": "Address",
   "firstName": "First name",
   "firstNamePlaceholder": "John",
@@ -13,6 +14,8 @@
   "cityPlaceholder": "Aarau",
   "phoneNumber": "Phone number",
   "phoneNumberPlaceholder": "079 000 00 00",
+  "email": "Email",
+  "emailPlaceholder": "john94@gmail.com",
   "isRequired": "Is required",
   "save": "Save",
   "deleteData": "Delete data",

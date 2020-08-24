@@ -1,5 +1,6 @@
 {
   "qrcode": "QRCode",
+  "outdated": "Die App wurde aktualisiert und es wird neu eine E-Mail verlangt. Bitte gib diese zusätzlich an.",
   "address": "Adresse",
   "firstName": "Vorname",
   "firstNamePlaceholder": "Fritzli",
@@ -13,6 +14,8 @@
   "cityPlaceholder": "Aarau",
   "phoneNumber": "Telefonnummer",
   "phoneNumberPlaceholder": "079 000 00 00",
+  "email": "E-Mail",
+  "emailPlaceholder": "fritzli94@bluewin.ch",
   "isRequired": "Wird benötigt",
   "save": "Speichern",
   "deleteData": "Daten löschen",

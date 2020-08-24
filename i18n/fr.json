@@ -1,5 +1,6 @@
 {
   "qrcode": "QRCode",
+  "outdated": "L'application a été mise à jour et une adresse électronique est désormais nécessaire. Veuillez la saisir.",
   "address": "Adresse",
   "firstName": "Prénom",
   "firstNamePlaceholder": "Jean",
@@ -13,6 +14,8 @@
   "cityPlaceholder": "Lausanne",
   "phoneNumber": "Téléphone",
   "phoneNumberPlaceholder": "079 000 00 00",
+  "email": "E-mail",
+  "emailPlaceholder": "jean94@bluewin.ch",
   "isRequired": "Est obligatoire",
   "save": "Save",
   "deleteData": "Effacer les données",

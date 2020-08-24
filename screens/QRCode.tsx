@@ -3,6 +3,7 @@ import React, {
   useState,
   useEffect,
   useCallback,
+  useMemo,
 } from "react";
 import { Alert, Text, Button, AsyncStorage, Dimensions } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
@@ -11,6 +12,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import QR from "react-native-qrcode-svg";
 import { RootStackParamList } from "../App";
 import i18n from "i18n-js";
+import { ADDRESS_API_VERSION } from "./Address";
 
 const ScreenView = styled(SafeAreaView)`
   flex: 1;
@@ -29,6 +31,14 @@ const QRCode: FunctionComponent<{
   navigation: QRCodeNavigationProp;
 }> = ({ navigation }) => {
   const [address, setAddress] = useState<undefined | null | string>(undefined);
+  const data = useMemo(() => {
+    try {
+      return JSON.parse(address || "");
+    } catch (e) {
+      return null;
+    }
+  }, [address]);
+
   const windowWidth = Dimensions.get("window").width;
 
   useEffect(() => {
@@ -56,6 +66,15 @@ const QRCode: FunctionComponent<{
       ) : address === null ? (
         <>
           <PaddedText>{i18n.t("noAddress")}</PaddedText>
+          <Button
+            title={i18n.t("enterAddress")}
+            onPress={() => navigation.navigate("Address")}
+          />
+        </>
+      ) : !("version" in data) ||
+        parseInt(data["version"]) < ADDRESS_API_VERSION ? (
+        <>
+          <PaddedText>{i18n.t("outdated")}</PaddedText>
           <Button
             title={i18n.t("enterAddress")}
             onPress={() => navigation.navigate("Address")}

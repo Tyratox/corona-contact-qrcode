@@ -1,5 +1,6 @@
 {
   "qrcode": "QRCode",
+  "outdated": "L'applicazione è stata aggiornata e d'ora in poi è richiesto un indirizzo e-mail. Si prega di inserirlo.",
   "address": "Indirizzo",
   "firstName": "Nome",
   "firstNamePlaceholder": "Pinco",
@@ -13,6 +14,8 @@
   "cityPlaceholder": "Bellinzona",
   "phoneNumber": "Telefono",
   "phoneNumberPlaceholder": "079 000 00 00",
+  "email": "E-mail",
+  "emailPlaceholder": "pinco94@bluewin.ch",
   "isRequired": "E' richiesto",
   "save": "Save",
   "deleteData": "Cancellare i dati",
