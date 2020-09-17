@@ -1,6 +1,6 @@
 {
   "qrcode": "QRCode",
-  "outdated": "Die App wurde aktualisiert und es wird neu eine E-Mail verlangt. Bitte gib diese zusätzlich an.",
+  "outdated": "Die App wurde aktualisiert und es wird neu das Geburtsdatum verlangt. Bitte gib dieses zusätzlich an.",
   "address": "Adresse",
   "firstName": "Vorname",
   "firstNamePlaceholder": "Fritzli",
@@ -16,6 +16,10 @@
   "phoneNumberPlaceholder": "079 000 00 00",
   "email": "E-Mail",
   "emailPlaceholder": "fritzli94@bluewin.ch",
+  "invalidEmail": "Ungültige E-Mail",
+  "dateOfBirth": "Geburtsdatum",
+  "dateOfBirthPlaceholder": "31.12.2000",
+  "invalidDateOfBirth": "Ungültiges Geburtsdatum",
   "isRequired": "Wird benötigt",
   "save": "Speichern",
   "deleteData": "Daten löschen",

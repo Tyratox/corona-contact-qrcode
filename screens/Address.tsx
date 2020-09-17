@@ -21,7 +21,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import i18n from "i18n-js";
 import Svg, { Circle, Path } from "react-native-svg";
 
-export const ADDRESS_API_VERSION = 2;
+export const ADDRESS_API_VERSION = 3;
 
 const ScreenView = styled(SafeAreaView)`
   flex: 1;
@@ -90,6 +90,7 @@ const Address: FunctionComponent<{
       city: "",
       phoneNumber: "",
       email: "",
+      dateOfBirth: "",
     },
   }); // initialise the hook
 
@@ -233,10 +234,34 @@ const Address: FunctionComponent<{
                 control={control}
                 name="email"
                 onChange={(args) => args[0].nativeEvent.text}
-                rules={{ required: true }}
+                rules={{
+                  required: true,
+                  pattern: {
+                    value: /\S+@\S+.\S+/,
+                    message: i18n.t("invalidEmail"),
+                  },
+                }}
                 placeholder={i18n.t("emailPlaceholder")}
               />
               {errors.email && <Error>{i18n.t("isRequired")}</Error>}
+            </Row>
+            <Row>
+              <Label>{i18n.t("dateOfBirth")}</Label>
+              <Controller
+                as={StyledTextInput}
+                control={control}
+                name="dateOfBirth"
+                onChange={(args) => args[0].nativeEvent.text}
+                rules={{
+                  required: true,
+                  pattern: {
+                    value: /\b(0?[1-9]|1\d|2\d|3[01])\.(0?[1-9]|1[0-2]).\d{4}\b/,
+                    message: i18n.t("invalidDateOfBirth"),
+                  },
+                }}
+                placeholder={i18n.t("dateOfBirthPlaceholder")}
+              />
+              {errors.dateOfBirth && <Error>{i18n.t("isRequired")}</Error>}
             </Row>
             <Row>
               <Button

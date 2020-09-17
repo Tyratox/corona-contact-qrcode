@@ -1,6 +1,6 @@
 {
   "qrcode": "QRCode",
-  "outdated": "The app was updated and from now on an email address is required. Please enter it.",
+  "outdated": "The app was updated and from now on the date of birth is required. Please enter it.",
   "address": "Address",
   "firstName": "First name",
   "firstNamePlaceholder": "John",
@@ -16,6 +16,10 @@
   "phoneNumberPlaceholder": "079 000 00 00",
   "email": "Email",
   "emailPlaceholder": "john94@gmail.com",
+  "invalidEmail": "Invalid email",
+  "dateOfBirth": "Date of birth",
+  "dateOfBirthPlaceholder": "31.12.2000",
+  "invalidDateOfBirth": "Invalid date of birth",
   "isRequired": "Is required",
   "save": "Save",
   "deleteData": "Delete data",

@@ -1,6 +1,6 @@
 {
   "qrcode": "QRCode",
-  "outdated": "L'application a été mise à jour et une adresse électronique est désormais nécessaire. Veuillez la saisir.",
+  "outdated": "L'application a été mise à jour et la date de naissance est désormais requise. Veuillez l'entrer.",
   "address": "Adresse",
   "firstName": "Prénom",
   "firstNamePlaceholder": "Jean",
@@ -16,6 +16,10 @@
   "phoneNumberPlaceholder": "079 000 00 00",
   "email": "E-mail",
   "emailPlaceholder": "jean94@bluewin.ch",
+  "invalidEmail": "e-mail non valide",
+  "dateOfBirth": "la date de naissance",
+  "dateOfBirthPlaceholder": "31.12.2000",
+  "invalidDateOfBirth": "date de naissance non valable",
   "isRequired": "Est obligatoire",
   "save": "Save",
   "deleteData": "Effacer les données",
